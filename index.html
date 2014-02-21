@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Plugin Slider</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<body>
+
+    
+        <div id="slider" >
+            <img src="img/test.jpg" alt="Test" title="Test" />
+            <img src="img/test.jpg" alt="Test" title="Test" />
+            <img src="img/test.jpg" alt="Test" title="Test" />
+            <img src="img/test.jpg" alt="Test" title="Test"/>
+            <img src="img/test.jpg" alt="Test" title="Test"/>
+        </div>     
+    
+
+    <script src="js/jquery-1.9.1.min.js"></script>
+    <script src="js/jquery.joo-slider.js"></script>
+    <script>
+    $(document).ready(function(){
+        $("#slider").jooSlider({
+            auto:true,
+            speed:4000
+        });
+    });
+    </script>
+</body>
+</html>
+
+
+        
+
+
+       
