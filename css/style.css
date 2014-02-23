@@ -5,8 +5,14 @@
         width:800px;
         height:600px;
     }
+    #slider img{
+      width:auto;
+      height:600px;
+    }
     .img-wrap{
         position:absolute;
+        text-align:center;
+        width:100%;
     }
     .img-wrap p{
         display: none;
@@ -15,7 +21,6 @@
         right:0;
         font-family: Arial sans-serif;
         font-size: 50px;
-        background-color:#fff;
         padding:10px;
     }
     #prev, #next{
@@ -23,7 +28,6 @@
         position:absolute;
         width:54px;
         height:54px;
-        z-index: 9999;
     }
     #prev{
         top:45%;
