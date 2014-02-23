@@ -11,6 +11,7 @@ $.fn.jooSlider = function(options) {
                 $.extend(opt, options);
             }
             
+            var container = $(this);
 
             var Slider  = function(){
 
@@ -18,9 +19,9 @@ $.fn.jooSlider = function(options) {
                 // Variables
                 //===========
                 var block = false;                                  // Empêcher le clique multiple
-                var height = $('#slider img').height();             // Hauteur des images
-                $('#slider img').wrap('<div class="img-wrap"></div>');            
-                this.imgs = $('#slider').find('.img-wrap');
+                var height = container.find('img').height();             // Hauteur des images
+                container.find('img').wrap('<div class="img-wrap"></div>');            
+                this.imgs = container.find('.img-wrap');
                 this.imgCount = (this.imgs.length) - 1;
 
                 /* Caption */
@@ -28,21 +29,20 @@ $.fn.jooSlider = function(options) {
                     var caption = $(this).find('img').attr('title');
                     $(this).append('<p>'+caption+'</p>');
                 });
-                this.captions = $('#slider').find('.img-wrap').find('p');
+                this.captions = container.find('.img-wrap').find('p');
 
                 /* Controls */
 
-                $('#slider').append('<div id="controls"><a href="#" id="prev"></a><a href="#" id="next"></a></div>');
+                container.append('<div id="controls"><a href="#" id="prev"></a><a href="#" id="next"></a></div>');
                 this.navNext =  $('#next');
                 this.navPrev =  $('#prev');
 
                 /* Navigation */
 
-                $("#slider").after('<div class="nav" />');
+                container.after('<div class="nav" />');
                 var nav = $(".nav");
-                this.imgs.each(function(i){
+                this.imgs.each(function(){
                     var caption = $(this).find('img').attr('title');
-                    i += 1;
                     nav.append('<a href="#">'+ caption +'</a>');
                 });
                 this.bullets = nav.find("a");
@@ -201,15 +201,13 @@ $.fn.jooSlider = function(options) {
             if(opt.auto === true){
                 var timer = function(){slider.next();};
             }
-            $("#slider").hover(function(){
+            container.hover(function(){
               clearInterval(interval);
             }, function(){
               clearInterval(interval);
               interval = setInterval(timer, opt.speed);
             });
 
-
-            return this;
 
     }; // End Plugin
 
