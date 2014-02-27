@@ -19,7 +19,7 @@
         position:absolute;
         top:5%;
         right:0;
-        font-family: Arial sans-serif;
+        font-family: "augustaregular";
         font-size: 50px;
         padding:10px;
     }
@@ -55,4 +55,12 @@
     .nav a.current{
         background-color:#222;
         color:#fff;
+    }
+
+    .copyright{
+        position: absolute;
+        top:10px;
+        left:10px;
+        width:250px;
+        z-index:999;
     }
